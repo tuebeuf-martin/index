@@ -21,10 +21,13 @@
 </head>
 <body>
 
-    <div class="container h-100 d-none">
+    <div class="container h-100">
         <div class="row">
-            <div class="col-3">
-                <p class="border border-dark p-2 mt-2 text-center">Règles</p>
+            <div class="col">
+                <p class="btn btn-success" data-toggle="modal" data-target="#modalRegles">Règles</p>
+            </div>
+            <div class="col">
+                <p class="btn btn-success" id="startGame">Lancez le jeu</p>
             </div>
         </div>
         <div class="row text-center">
@@ -35,7 +38,7 @@
             </div>
 
             <div class="col-6 col-sm-4">
-                <p class="border border-dark p-3">00:00:00</p>
+                <p class="border border-dark p-3" id="timerJeu">00:00:00</p>
             </div>
 
             <!-- Display none for mobile -->
@@ -49,12 +52,12 @@
 
         <div class="row mt-5 text-center">
             <div class="col-4 d-flex justify-content-center">
-                <div class="rounded-circle border border-dark circleSize">
+                <div class="rounded-circle border border-dark circleSize" id="cercle1">
 
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-center">
-                <div class="rounded-circle border border-dark circleSize">
+                <div class="rounded-circle border border-dark circleSize" id="cercle2">
 
                 </div>
             </div>
@@ -100,6 +103,34 @@
         </div>
 
     </div>
+
+    <div class="modal" tabindex="-1" id="modalRegles">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Les règles du jeu</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-justify">
+                    Tu as toujours rêvé de taper ton professeur méchant ?! "Tape ton prof" te le permet ! Le but du jeu ressemble au tape taupe, mais c'est 
+                    tes profs qu'il faut frapper (ça marche aussi avec les formateurs...) ! Les têtes de tes profs préférés apparaissent à l'écran de façon aléatoire.
+                    Déchaines-toi et tape le plus vite possible sur leurs têtes ! Le jeu est infini est s'arrête quand les profs auront eu raison de toi en étant
+                    trop rapide pour esquiver tes claques !
+                </p>
+                <p>
+                    Déchaînes-toi !!!
+                </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Jouer au jeu</button>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
