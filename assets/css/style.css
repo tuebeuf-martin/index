@@ -1,1 +1,38 @@
 /* First Push */
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+html {
+    /* Pour que le background garde sa taille normal sur tout le body. Sinon l'image est mangé en bas. */
+    height: 100%;
+}
+
+body {
+    min-width: 100%;
+    background-image: url("../img/background.jpg");
+    background-size: 100% 100%;
+}
+
+#gameTitle {
+    margin-top: 40px;
+    font-size: 30px;
+    background-color: white;
+    border: black solid 1px;
+}
+
+.rules {
+    font-size: 17px;
+    color: white;
+    width: 70%;
+    background-color: #6F837A;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+
+#qrcode {
+    width: 300px;
+    height: auto;
+}
