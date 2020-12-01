@@ -47,3 +47,32 @@ body{
 #chronoPoints{
     position: absolute;
 }
+
+.imgContainer {
+    min-width: 100%;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#gameTitle {
+    margin-top: 40px;
+    font-size: 30px;
+    background-color: white;
+    border: black solid 1px;
+}
+
+.rules {
+    font-size: 17px;
+    color: white;
+    width: 70%;
+    background-color: #6F837A;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+
+#qrcode {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}

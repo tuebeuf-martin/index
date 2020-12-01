@@ -4,7 +4,16 @@ let circleSize = document.getElementsByClassName('circleSize');
 let circleSizeArray = [... circleSize];
 
 let startGame = document.getElementById('startGame');
-let timerJeu = document.getElementById('timerJeu')
+let timerJeu = document.getElementById('timerJeu');
+
+let qrcode = document.getElementById('qrcode');
+let pageAcceuil = document.getElementById('pageAcceuil');
+let containerPageJeu = document.getElementById('containerPageJeu');
+
+qrcode.addEventListener('click', function(){
+    pageAcceuil.classList.add('d-none');
+    containerPageJeu.classList.add('d-block');
+})
 
 let sec = 00;
 let min = 00;
