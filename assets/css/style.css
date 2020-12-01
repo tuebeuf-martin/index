@@ -4,9 +4,46 @@ body{
     height: 100vh;
 }
 
+#boardGame{
+    height: 40%;
+    position: relative;
+}
+
+#contentGames{
+    height: 60%;
+    background-color: #e9cd9c;
+}
+
 
 .circleSize{
     width: 100px;
     height: 100px;
 }
 
+.heightJeu{
+    height: 150px;
+}
+
+.imgTable{
+    background-image: url(../img/tableOrdi.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.buttonRulesAndStart{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.titleScore{
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#chronoPoints{
+    position: absolute;
+}
