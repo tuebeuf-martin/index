@@ -1,4 +1,3 @@
-/* First Push */
 
 body{
     height: 100vh;
@@ -75,4 +74,10 @@ body{
     width: 300px;
     height: auto;
     cursor: pointer;
+}
+.imgHead {
+    height: 5rem;
+    width: 5rem;
+    /* display: none; */
+    opacity: 0;
 }
