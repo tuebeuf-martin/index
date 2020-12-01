@@ -17,12 +17,56 @@ window.setInterval( () => {
 }, 1000);
 
 function addHead() {
+
+
     let rIndex = Math.floor(Math.random() * headArray.length);
     let imgRIndex = Math.floor(Math.random() * imgHead.length);
     
     if (imgHead[imgRIndex].getAttribute("src") == "") {
         console.log("img src empty");
+        
+        
+        imgHead[imgRIndex].style.transition = "opacity .3s ease-in";
+        imgHead[imgRIndex].style.opacity = "1";
         imgHead[imgRIndex].src = headArray[rIndex];
+
         headOnScreenCount++;
-    }
+    } 
+
+    deleteHead(imgHead[imgRIndex]);
 }
+
+function deleteHead(a) {
+    window.setTimeout( () => { 
+        
+
+        a.style.opacity = "0";
+        a.src = "";
+        headOnScreenCount--;
+    }, 1000);
+}
+
+let soundA = document.getElementById("soundA");
+let soundB = document.getElementById("soundB");
+
+imgHead.forEach(e => {
+    e.addEventListener("click", () => {
+        let r = Math.floor(Math.random() * 2);
+        console.log(r);
+        if (r == 1) {
+            soundA.play();
+        }
+        else {
+            soundB.play();
+        }
+        e.src = "";
+            
+        headOnScreenCount--;
+        // if (imgHead[imgRIndex].getAttribute("src") != "") {
+        //     console.log("eeeeeee " + e.src)
+        //     e.src = "";
+            
+        //     headOnScreenCount--;
+        // }
+    });
+});
