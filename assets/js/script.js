@@ -15,6 +15,8 @@ qrcode.addEventListener('click', function(){
     containerPageJeu.classList.add('d-block');
 })
 
+let interval = 1000;
+
 let sec = 00;
 let min = 00;
 let hour = 00;
@@ -43,7 +45,7 @@ function activateClock(){
         if (headOnScreenCount < headMax) {
             addHead();
         }    
-    }, 1000);
+    }, interval);
 }
 
 function clock(){
@@ -94,9 +96,9 @@ function clock(){
 let imgHead = document.querySelectorAll(".imgHead");
 
 let headArray = [];
-    headArray[0] = "assets/img/troll.png";
-    headArray[1] = "assets/img/troll2.png";
-    headArray[2] = "assets/img/troll3.png";
+    headArray[0] = "assets/img/Anousone-Mounivongs-400.png";
+    headArray[1] = "assets/img/frederik-noel-formateur-la-manu-formation.png";
+    headArray[2] = "assets/img/Nicolas-Vallois-400.png";
     // After launch random img appear with delay
 
 let headOnScreenCount = 0;
@@ -117,7 +119,7 @@ function addHead() {
         imgHead[imgRIndex].style.transition = "opacity .3s ease-in";
         imgHead[imgRIndex].style.opacity = "1";
         imgHead[imgRIndex].src = headArray[rIndex];
-
+        
         headOnScreenCount++;
     } 
 
@@ -129,27 +131,58 @@ function deleteHead(a) {
         
 
         a.style.opacity = "0";
-        a.src = "";
+        
         headOnScreenCount--;
-    }, 1000);
+    }, interval);
 }
 
 let soundA = document.getElementById("soundA");
 let soundB = document.getElementById("soundB");
-
+var score = 0;
+var difficulty = 0;
 imgHead.forEach(e => {
     e.addEventListener("click", () => {
         let r = Math.floor(Math.random() * 2);
         console.log(r);
-        if (r == 1) {
-            soundA.play();
+        if (e.getAttribute("src") != "") {
+            if (r == 1) {
+                soundA.play();
+            }
+            else {
+                soundB.play();
+            }
+            e.src = "";
+               
+            headOnScreenCount--;
+
+
+
+
+
+            if (difficulty < 10){
+                score += 10;
+            }
+            else if (difficulty >= 10){
+                score += 20;
+                interval = 800;
+            }
+            else if (difficulty >= 35){
+                score += 60;
+                interval = 700;
+            }
+            else if (difficulty >= 50){
+                score += 100;
+                interval = 650;
+            }
+            if (score > 1000) {
+                interval = 300;
+            }
+            difficulty++;
+            $("#score").html(score);
+            console.log(difficulty)
+            console.log(score)
         }
-        else {
-            soundB.play();
-        }
-        e.src = "";
-            
-        headOnScreenCount--;
+
         // if (imgHead[imgRIndex].getAttribute("src") != "") {
         //     console.log("eeeeeee " + e.src)
         //     e.src = "";
@@ -158,3 +191,35 @@ imgHead.forEach(e => {
         // }
     });
 });
+// $(document).ready(function(){
+//     var score = 0;
+//     var difficulty = 0;
+//     $(".imgHead").click(function(e){ 
+//         if (e.attr("src") != "") {
+//             if (difficulty < 10){
+//                 score += 10;
+//             }
+//             else if (difficulty >= 10){
+//                 score += 20;
+//                 interval = 800;
+//             }
+//             else if (difficulty >= 35){
+//                 score += 60;
+//                 interval = 700;
+//             }
+//             else if (difficulty >= 50){
+//                 score += 100;
+//                 interval = 650;
+//             }
+//             if (score > 1000) {
+//                 interval = 300;
+//             }
+//             difficulty++;
+//             $("#score").html(score);
+//             console.log(difficulty)
+//             console.log(score)
+//         }
+
+//     });
+// });
+
