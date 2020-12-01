@@ -1,1 +1,11 @@
 /* First Push */
+
+body{
+    height: 100vh;
+}
+
+
+.circleSize{
+    width: 100px;
+    height: 100px;
+}
