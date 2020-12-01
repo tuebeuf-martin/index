@@ -9,11 +9,14 @@ html {
     /* Pour que le background garde sa taille normal sur tout le body. Sinon l'image est mangé en bas. */
     height: 100%;
 }
-
 body {
+    min-height: 100vh;
+}
+.imgContainer {
     min-width: 100%;
     background-image: url("../img/background.jpg");
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 #gameTitle {
